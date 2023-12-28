@@ -22,10 +22,13 @@ app.use( express.json() );
 
 //rutas
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
 // TODO: CRUD: eventos
 
 
 // listen to requests
-app.listen( process.env.PORT, ()  => {
-    console.log(`Servidor corriendo en puerto ${ process.env.PORT }`);
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+}).on('error', (err) => {
+    console.error('Error al iniciar el servidor:', err);
 });

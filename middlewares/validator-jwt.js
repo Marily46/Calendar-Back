@@ -31,8 +31,7 @@ const validatorJWT = ( req, res, next ) => {
 
     console.log(token);
 
-    next
-
+    next();
 
 }
 
